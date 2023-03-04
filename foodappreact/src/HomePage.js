@@ -23,7 +23,7 @@ function HomePage() {
     <div class="foodie">
       <Header />
       <div className="container">
-        <div className="content-page">
+        <div className="content-page dishpage">
           <div className="row foodview">
             {
               itemList.map((item) => {

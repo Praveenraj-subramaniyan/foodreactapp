@@ -14,31 +14,22 @@ function ForgetPassword() {
       });
       function HandleResponse(response) {
   
-        if(response === "True"){
-        alert("Password:")
-          window.location.href = "/login";
+        if(response === "False"){
+            setIsVisible({
+                status: 'visually-true',
+                message: 'Invalid Username'
+              });
         }
-       else if(response === "False")
-       {
-        setIsVisible({
-          status: 'visually-true',
-          message: 'Not registered'
-        });
-       }
        else 
        {
-        setIsVisible({
-          status: 'visually-true',
-          message: 'Server time out'
-        });
+        alert("Password:" + response.password)
+        window.location.href = "/login";
        }
       
         }
     function handleSubmit(event) {
         event.preventDefault();
-        if(data.confirmpassword === data.password)
-        {
-        const url ="http://localhost:3000/register"
+        const url ="http://localhost:3000/forgetpassword"
         console.log(data)
         axios.post(url, data)
           .then((res) => {
@@ -47,13 +38,6 @@ function ForgetPassword() {
           .catch((error) => {
             console.error(error);
           });
-        }
-        else{
-             setIsVisible({
-               status: 'visually-true',
-               message: 'Password Mismatch'
-             });
-        }
     }
         function handleData(event) {
             const target = event.target;

@@ -13,17 +13,8 @@ router.post('/', async(req, res) => {
         console.log(registerCredentials)
         if(registerCredentials != null)
         {
-          res.status(200).send("True");
-          try
-          {
-            const result = await  db.collection("UserRegistration").insertOne({ email: emailid, password: password } );
-         
-          } 
-          catch (error) 
-          {
-            console.log("mongo" +error)
-            res.status(200).send("Error");
-          }
+          res.status(200).send(registerCredentials);
+      
         }
         else
         {
