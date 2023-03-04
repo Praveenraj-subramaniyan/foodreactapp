@@ -9,6 +9,8 @@ import DetailPage from './DetailPage';
 import { BrowserRouter, Route, Router, Routes ,Navigate} from 'react-router-dom';
 import LoginPage from './LoginPage';
 import RegisterPage from './RegisterPage';
+import ForgetPassword from './ForgetPassword';
+
 
 function App() {
   return (
