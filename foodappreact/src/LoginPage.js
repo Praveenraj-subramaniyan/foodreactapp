@@ -64,7 +64,7 @@ function LoginPage() {
   }
   
   return (
-    <div className='Login container'>
+    <div className=' container'>
       <form id='loginForm' onSubmit={handleSubmit}>
         <input
           type='email'
